@@ -1,29 +1,31 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace WebAppTest.Controllers
+namespace Controllers
 {
     public class HomeController : Controller
     {
+        ContactDbEntities dt = new ContactDbEntities(); 
+
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
-
-        public ActionResult About()
+        [HttpPost]
+        public ActionResult Index(Table cot)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            dt.Tables.Add(cot);
+            dt.SaveChanges();
+            return RedirectToAction("Second");
         }
 
-        public ActionResult Contact()
+        public ActionResult Second()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }

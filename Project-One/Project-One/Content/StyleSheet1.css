@@ -1,0 +1,253 @@
+﻿body {
+}
+
+.image1 {
+    position: absolute;
+    width: 73px;
+    height: 54px;
+    left: 50%;
+    top: 10px;
+    background: url("/images/image 1.png");
+}
+
+.frame1 {
+    position: relative;
+    width: 100%;
+    height: 798px;
+    background: #FFFFFF;
+}
+
+.rectangle5 {
+    position: absolute;
+    width: 100%;
+    height: 81px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0px;
+    background: #F5F5F5;
+}
+
+
+.frame6 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+    position: absolute;
+    width: 346px;
+    height: 160px;
+    left: 375px;
+    top: 349px;
+}
+
+.rectangle2 {
+    position: absolute;
+    width: 100%;
+    height: 565px;
+    left: 0px;
+    top: 144px;
+    background: #F5F5F5;
+}
+
+.rectangle1 {
+    position: absolute;
+    width: 100%;
+    height: 434px;
+    left: calc(50% - 747px/2);
+    top: 211px;
+    background: #FEFEFE;
+    border-radius: 10px;
+}
+
+.rectangle3 {
+    position: absolute;
+    width: 284px;
+    height: 249px;
+    left: 50px;
+    top: 328px;
+    background-image: url("/images/Rectangle 3.png");
+}
+
+
+.frame5Button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    width: 346px;
+    height: 31px;
+    background: #0594B4;
+    border-radius: 5px;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    color: white;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    width: 100%;
+    height: 31px;
+    background: #EFFCFF;
+    border-radius: 5px;
+    /* Inside auto layout */
+
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.frame2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    width: 346px;
+    height: 31px;
+    background: #EFFCFF;
+    border-radius: 5px;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.frame3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    width: 346px;
+    height: 31px;
+    background: #EFFCFF;
+    border-radius: 5px;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.frame4 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    width: 346px;
+    height: 31px;
+    background: #EFFCFF;
+    border-radius: 5px;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 3;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.frame5 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    width: 346px;
+    height: 31px;
+    background: #EFFCFF;
+    border-radius: 5px;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 4;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.frame7 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+    position: absolute;
+    width: 346px;
+    height: 31px;
+    left: 375px;
+    top: 546px;
+    background: #FFFFFF;
+}
+
+.Group1 {
+    position: absolute;
+    width: 747px;
+    height: 434px;
+    left: calc(50% - 747px/2);
+    top: 10px;
+}
+
+.Contact {
+    position: absolute;
+    width: 129px;
+    height: 29px;
+    left: calc(50% - 129px/2 - 18px);
+    top: 242px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+
+    text-align: center;
+    color: #0594B4;
+}
+
+.Sentence {
+    position: absolute;
+    width: 276px;
+    height: 19px;
+    left: calc(50% - 276px/2 - 17.5px);
+    top: 279px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #4A4A4A;
+}
+
+.submit {
+    width: 42px;
+    height: 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
