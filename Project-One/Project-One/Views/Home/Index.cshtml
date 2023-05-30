@@ -6,59 +6,84 @@
 
 <link href="~/Content/StyleSheet1.css" rel="stylesheet" />
 
-
-@using (Html.BeginForm())
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "myForm" }))
 {
+    @Html.ValidationSummary()
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="frame1">
-        <form>
-            <div class="rectangle5"></div>
-            <div class="rectangle2"></div>
+        <div class="rectangle5"></div>
+        <div class="rectangle2"></div>
 
-            <div class="Group1">
-                <div class="rectangle1"></div>
+        <div class="Group1">
+            <div class="rectangle1"></div>
 
-                <div class="frame6">
+            <div class="frame6">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="frame2">
-                        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", placeholder = "First Name" } })
-                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
-                    </div>
-
-
-
-                    <div class="frame3">
-                        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", placeholder = "Last Name" } })
-                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
-                    </div>
-
-
-                    <div class="frame4">
-                        @Html.EditorFor(model => model.Telephone, new { htmlAttributes = new { @class = "form-control", placeholder = "Telephone" } })
-                        @Html.ValidationMessageFor(model => model.Telephone, "", new { @class = "text-danger" })
-                    </div>
-
-                    <div class="frame5">
-                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email" } })
-                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                    </div>
+                <div class="frame2">
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "text-field", placeholder = "First Name" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
                 </div>
 
-                <div class="frame7">
-                    <input type="submit" value="Submit" class="frame5Button" />
+                <div class="frame3">
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "text-field", placeholder = "Last Name" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
                 </div>
-                <div class="rectangle3">
+
+                <div class="frame4">
+                    @Html.EditorFor(model => model.Telephone, new { htmlAttributes = new { @class = "text-field", placeholder = "Telephone" } })
+                    @Html.ValidationMessageFor(model => model.Telephone, "", new { @class = "text-danger" })
                 </div>
-                <div class="Contact">Contact</div>
-                <div class="Sentence">We look forward to hearing from you!</div>
+
+                <div class="frame4">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "text-field", placeholder = "Email" } })
+
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
             </div>
-            <div class="image1"></div>
-        </form>
+            <div class="frame7">
+                @Html.HiddenFor(m => m.GoogleCaptchaToken)
+                <input type="submit" value="Submit" class="frame5Button" />
+
+            </div>
+
+            <div class="rectangle3"></div>
+            <div class="Contact">Contact</div>
+            <div class="Sentence">We look forward to hearing from you!</div>
+        </div>
+
+        <div class="image1"></div>
     </div>
 }
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $(document).ready(function () {
+            $('#myForm').submit(function (e) {
+                var emailValue = $('#Email').val();
+                var FirstValue = $('#FirstName').val();
+                var LastValue = $('#LastName').val();
+                var PhoneValue = $('#Telephone').val();
+
+                if ($.trim(emailValue) === '' || $.trim(FirstValue) === '' || $.trim(LastValue) === '' || $.trim(PhoneValue) === '') {
+                    e.preventDefault(); // Prevent form submission
+                    alert('Please fill all the fields.');
+                }
+
+                // If all validations pass, the form will be submitted
+            });
+        });
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LesXEQmAAAAAPDeq1zOudpXLORZCjLWtDRg28vB"></script>
+    <script>
+            grecaptcha.ready(function () {
+                grecaptcha.execute('6LesXEQmAAAAAPDeq1zOudpXLORZCjLWtDRg28vB', { action: 'submit' }).then(function (token) {
+                    $("#GoogleCaptchaToken").val(token);
+                    // Add your logic to submit to your backend server here.
+                });
+            });
+    </script>
 }

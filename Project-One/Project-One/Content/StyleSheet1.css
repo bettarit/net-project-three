@@ -183,14 +183,14 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0px;
     gap: 12px;
     position: absolute;
     width: 346px;
     height: 31px;
     left: 375px;
-    top: 546px;
+    top: 610px;
     background: #FFFFFF;
+
 }
 
 .Group1 {
@@ -250,4 +250,24 @@
     flex: none;
     order: 0;
     flex-grow: 0;
+}
+.text-field {
+    border: 0px transparent;
+    padding: 0px;
+    width: 100%;
+    outline: transparent;
+    background-color: #EFFCFF;
+}
+.frameRecaptcha {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    position: absolute;
+    width: 346px;
+    height: 70px;
+    left: 375px;
+    top: 520px;
+    background: #FFFFFF;
+    z-index:5;
 }
